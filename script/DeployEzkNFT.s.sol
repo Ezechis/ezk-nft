@@ -7,8 +7,10 @@ import {EzkNFT} from "../src/EzkNFT.sol";
 /// forge script script/DeployEzkNFT.s.sol --rpc-url sepolia --account <keystore> --broadcast
 contract DeployEzkNFT is Script {
     function run() external returns (EzkNFT nft) {
-        vm.startBroadcast();
-        nft = new EzkNFT(msg.sender);
+        (, address deployer,) = vm.readCallers();
+
+        vm.startBroadcast(deployer);
+        nft = new EzkNFT(deployer);
         vm.stopBroadcast();
 
         console.log("EzkNFT deployed at:", address(nft));

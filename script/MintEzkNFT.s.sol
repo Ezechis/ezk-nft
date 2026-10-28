@@ -10,10 +10,11 @@ import {EzkNFT} from "../src/EzkNFT.sol";
 contract MintEzkNFT is Script {
     function run() external returns (uint256 tokenId) {
         EzkNFT nft = EzkNFT(vm.envAddress("NFT_ADDRESS"));
-        address to = vm.envOr("MINT_TO", msg.sender);
+        (, address minter,) = vm.readCallers();
+        address to = vm.envOr("MINT_TO", minter);
         string memory uri = vm.envOr("TOKEN_URI", onChainTokenURI());
 
-        vm.startBroadcast();
+        vm.startBroadcast(minter);
         tokenId = nft.mintNFT(to, uri);
         vm.stopBroadcast();
 
