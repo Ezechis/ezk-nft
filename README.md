@@ -34,11 +34,11 @@ forge test -vv
 3. Deploy (and verify on Etherscan):
    ```bash
    source .env
-   forge script script/DeployEzkNFT.s.sol --rpc-url sepolia --account sepolia-dev --sender <your-address> --broadcast --verify
+   forge script script/DeployEzkNFT.s.sol --rpc-url sepolia --account sepolia-dev --sender <your-address> --broadcast --skip-simulation --verify
    ```
 4. Mint, using the deployed address:
    ```bash
-   NFT_ADDRESS=0x... forge script script/MintEzkNFT.s.sol --rpc-url sepolia --account sepolia-dev --sender <your-address> --broadcast
+   NFT_ADDRESS=0x... forge script script/MintEzkNFT.s.sol --rpc-url sepolia --account sepolia-dev --sender <your-address> --broadcast --skip-simulation
    ```
    To use Pinata-hosted metadata instead, upload the image + a metadata JSON to Pinata and add `TOKEN_URI=ipfs://<metadata-cid>`.
 
@@ -53,3 +53,24 @@ NFT_ADDRESS=0x5FbDB2315678afecb367f032d93F642f64180aa3 forge script script/MintE
 ## Author
 
 Ezechi Kingsley Nnabugwu
+
+## Live on Sepolia
+
+| | |
+|---|---|
+| Contract | [`0xe5e883DC24EEcc835Aa4a3AD28d2E366Fdb953dE`](https://sepolia.etherscan.io/address/0xe5e883DC24EEcc835Aa4a3AD28d2E366Fdb953dE) |
+| Deploy tx | [`0xd7921f2c…e32b4e`](https://sepolia.etherscan.io/tx/0xd7921f2cd753b445ba71e4f52103f61e75a9e9f822a7f014550a7d41e3e32b4e) |
+| Mint tx (token #0) | [`0xd87610ca…161d7dd`](https://sepolia.etherscan.io/tx/0xd87610ca9992321d18e470aa93cc5c3f393f41abceabc4879e1b118cf161d7dd) |
+
+Sepolia charges far more gas for contract creation and on-chain storage than Foundry's local simulation predicts, so pass `--skip-simulation` to use the network's own gas estimate.
+
+## Screenshots
+
+| Step | |
+|---|---|
+| Compilation | ![compile](screenshots/01-compile.png) |
+| Testing | ![test](screenshots/02-test.png) |
+| Deployment | ![deploy](screenshots/03-deploy-etherscan.png) |
+| Minting | ![mint](screenshots/04-mint-etherscan.png) |
+| Minting (terminal) | ![mint terminal](screenshots/06-mint-terminal.png) |
+| On-chain check | ![verify](screenshots/05-mint-verify-onchain.png) |
