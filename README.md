@@ -34,11 +34,11 @@ forge test -vv
 3. Deploy (and verify on Etherscan):
    ```bash
    source .env
-   forge script script/DeployEzkNFT.s.sol --rpc-url sepolia --account sepolia-dev --broadcast --verify
+   forge script script/DeployEzkNFT.s.sol --rpc-url sepolia --account sepolia-dev --sender <your-address> --broadcast --verify
    ```
 4. Mint, using the deployed address:
    ```bash
-   NFT_ADDRESS=0x... forge script script/MintEzkNFT.s.sol --rpc-url sepolia --account sepolia-dev --broadcast
+   NFT_ADDRESS=0x... forge script script/MintEzkNFT.s.sol --rpc-url sepolia --account sepolia-dev --sender <your-address> --broadcast
    ```
    To use Pinata-hosted metadata instead, upload the image + a metadata JSON to Pinata and add `TOKEN_URI=ipfs://<metadata-cid>`.
 
