@@ -60,7 +60,13 @@ Ezechi Kingsley Nnabugwu
 |---|---|
 | Contract | [`0xe5e883DC24EEcc835Aa4a3AD28d2E366Fdb953dE`](https://sepolia.etherscan.io/address/0xe5e883DC24EEcc835Aa4a3AD28d2E366Fdb953dE) |
 | Deploy tx | [`0xd7921f2c…e32b4e`](https://sepolia.etherscan.io/tx/0xd7921f2cd753b445ba71e4f52103f61e75a9e9f822a7f014550a7d41e3e32b4e) |
-| Mint tx (token #0) | [`0xd87610ca…161d7dd`](https://sepolia.etherscan.io/tx/0xd87610ca9992321d18e470aa93cc5c3f393f41abceabc4879e1b118cf161d7dd) |
+| Mint tx (token #0, on-chain SVG) | [`0xd87610ca…161d7dd`](https://sepolia.etherscan.io/tx/0xd87610ca9992321d18e470aa93cc5c3f393f41abceabc4879e1b118cf161d7dd) |
+| Mint tx (token #1, Pinata/IPFS) | [`0xf0983057…ccb2e01`](https://sepolia.etherscan.io/tx/0xf09830571f441980cedccf574946aa114fd4ffa6817bcd715283d2e01ccb2e01) |
+
+### Token #1 metadata on IPFS (Pinata)
+
+- Image: `ipfs://bafkreigkxmii27yvih5zdkj6glzxsgh3b4pioljxjx3btgud4xvtnwzbjy`
+- Metadata ([`metadata/1.json`](metadata/1.json)): `ipfs://bafkreichxxfkx7sxoztfmt3qdaqwjgjygfrc6z2tyxyh7sdqch6jp3qyhm`
 
 Sepolia charges far more gas for contract creation and on-chain storage than Foundry's local simulation predicts, so pass `--skip-simulation` to use the network's own gas estimate.
 
@@ -70,7 +76,10 @@ Sepolia charges far more gas for contract creation and on-chain storage than Fou
 |---|---|
 | Compilation | ![compile](screenshots/01-compile.png) |
 | Testing | ![test](screenshots/02-test.png) |
+| Deployment (terminal) | ![deploy terminal](screenshots/07-deploy-terminal.png) |
 | Deployment | ![deploy](screenshots/03-deploy-etherscan.png) |
-| Minting | ![mint](screenshots/04-mint-etherscan.png) |
-| Minting (terminal) | ![mint terminal](screenshots/06-mint-terminal.png) |
+| Minting token #0 | ![mint](screenshots/04-mint-etherscan.png) |
+| Minting token #0 (terminal) | ![mint terminal](screenshots/06-mint-terminal.png) |
+| Minting token #1 via Pinata (terminal) | ![mint ipfs terminal](screenshots/08-mint-ipfs-terminal.png) |
+| Minting token #1 via Pinata | ![mint ipfs](screenshots/09-mint-ipfs-etherscan.png) |
 | On-chain check | ![verify](screenshots/05-mint-verify-onchain.png) |

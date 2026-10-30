@@ -1,0 +1,11 @@
+{
+  "name": "Lagos Circuit #1",
+  "description": "A Lagos skyline at dusk wired into a circuit board. IPFS edition, image and metadata pinned on Pinata. Minted by Ezechi Kingsley with Foundry.",
+  "image": "ipfs://bafkreigkxmii27yvih5zdkj6glzxsgh3b4pioljxjx3btgud4xvtnwzbjy",
+  "attributes": [
+    { "trait_type": "City", "value": "Lagos" },
+    { "trait_type": "Palette", "value": "Dusk" },
+    { "trait_type": "Edition", "value": "IPFS" },
+    { "trait_type": "Storage", "value": "Pinata" }
+  ]
+}
